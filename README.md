@@ -24,3 +24,11 @@ apply migrations (whenever changes to model)
 python3 manage.py makemigrations
 python3 manage.py migrate
 ```
+
+populate db using ORM
+```python
+python3 manage.py shell 
+
+from products.models import Product
+obj = Product.objects.get(id=1)   # gets object by primary key
+```
