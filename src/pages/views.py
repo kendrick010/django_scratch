@@ -14,8 +14,10 @@ def contact_view(request, *args, **kwargs):
 def about_view(request, *args, **kwargs):
     my_context = {
         "my_text": "This is about us",
+        "this_is_true": True,
         "my_number": 123,
         "my_list": [123, 456, 789],
+        "my_html": "<h1>Safe filter, renders html</h1>"
     }
 
     return render(request=request, template_name="about.html", context=my_context)

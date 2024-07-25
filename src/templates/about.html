@@ -7,9 +7,15 @@
 <p>Text: {{ my_text }}</p>
 <p>Number: {{ my_number }}</p>
 
+{{ my_html|safe }}
+
 <ul>
     {% for item in my_list %}
-    <li>{{ forloop.counter }} - {{ item }}</li>
+        {% if item == 123 %}
+            <li>{{ forloop.counter }} - {{ item|add:22 }}</li>
+        {% else %}
+            <li>{{ forloop.counter }} - {{ item }}</li>
+        {% endif %}
     {% endfor %}
 </ul>
 
