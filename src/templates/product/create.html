@@ -2,8 +2,21 @@
 
 {% block content%}
 
-<form action="." method="POST"> {% csrf_token %}
+<!-- This utilizes form template from scratch -->
+<!-- <form action="." method="POST"> {% csrf_token %}
     <input type="text" name="title" placeholder="Your title">
+    <input type="submit" value="save">
+</form> -->
+
+<!-- This utilizes model form template -->
+<!-- <form method="POST"> {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="save">
+</form> -->
+
+<!-- This utilizes pure django's form template -->
+<form method="POST"> {% csrf_token %}
+    {{ form.as_p }}
     <input type="submit" value="save">
 </form>
 
