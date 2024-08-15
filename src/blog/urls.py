@@ -1,10 +1,12 @@
 from django.urls import path
 
 from blog.views import (
-    ArticleListView
+    ArticleListView,
+    ArticleDetailView
 )
 
 app_name = "articles"
 urlpatterns = [
-    path('blog/', ArticleListView.as_view(), name='article_list'),
+    path('', ArticleListView.as_view(), name='article_list'),
+    path('<int:id>/', ArticleDetailView.as_view(), name='article_detail'),
 ]
